@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html >
+  <head>
+      
+      <style>
+          @import url('https://fonts.googleapis.com/css?family=Niconne');
+            div {
+                margin-left: 500px;
+                margin-top: 100px;
+                width: 900px;
+                font-size: 25px;
+                font-family: 'Niconne', cursive;
+                
+                
+            }
+        </style>
+      
+      </head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <body>
+        
+        <div id="Text">
+        
+        </div>
+      <script type="text/javascript" src="TextFile.js"></script>
+     <script>
+
+       var txt;
+       txt=texting();
+       var newText=txt.split(" ");
+       var order=2;
+       var nGram={};
+       var TextLength=300;
+       var div = document.getElementById("Text");  
+       
+         
+         console.log(newText);
+
+
+       for (var i=0;i<newText.length-order;i++){
+
+         var gram=newText[i];
+             gram+=" "+newText[i+1]
+
+
+        if(!nGram[gram]){
+            nGram[gram]=[];
+        }
+        nGram[gram].push(newText[i+order]);
+
+       }
+       console.log(nGram);
+       var startPos=Math.floor(Math.random()*newText.length-1)
+       var currentGram=newText[startPos]+" "+newText[startPos+1];
+       var result=currentGram+" ";
+
+
+
+  for(var i=0;i<TextLength;i++){
+  if  (nGram[currentGram]){
+     var possibil=nGram[currentGram];
+     var next=possibil[Math.floor(Math.random()*(possibil.length-1))];
+     result+=next+" ";
+     var beforeWord=result.split(" ");
+     currentGram=beforeWord[beforeWord.length-(order+1)]+" "+next;
+
+
+      
+      
+      
+}
+
+        }
+         result+=".";
+         div.innerHTML=result;
+   //document.write(result);
+
+
+     </script>
+
+    </body>
+  
+</html>
