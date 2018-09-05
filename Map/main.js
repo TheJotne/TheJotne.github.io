@@ -54,6 +54,7 @@ for(y=0;y<col;y++){
 }
 imgVillage.onload =function(){
 drawTile();
+coordinator(deltaX,deltaY);
 }
 
 function monstering(type){
