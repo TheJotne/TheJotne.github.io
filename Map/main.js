@@ -2,6 +2,7 @@
 var tiles=[];
 var row=10;
 var col=10;
+var dimension=36;
 var Field;
 var OpenMonster=["Dinosaurs","Dogs","Dragons","Dwarfs","Elves","Giants","Gnolls","Goblins","Gorgons","Hobogoblins","Horses","Lions","Lycantrophes","Mastodons","Men","Pasant","Ogres","Orcs","Purple worms","Titanotheres"]
 var WoodMonster=["Bears","Boars","Centaurs","Centipede","Cockatrices","Dragons","Dryads","Elves","Lycanthropes","Medusa","Men","Pasant","Ogres","Pixies","Giant Worm","Giant Snake","Giant Spieder","Treants","Unicorns","Weasels"]
@@ -14,16 +15,16 @@ var x;
 var y;
 var canvas = document.getElementById("Canvas");
 var ctx=canvas.getContext("2d");
-var imgDessert=new Image(36,36);
-var imgForest=new Image(36,36);
-var imgVillage=new Image(36,36);
-var imgMountain=new Image(36,36);
-var imgSwamp=new Image(36,36);
-var imgOpen=new Image(36,36);
-var imgTrail=new Image(36,36);
-var imgLair=new Image(36,36);
-var imgStronghold=new Image(36,36);
-var imgRiver=new Image(36,36);
+var imgDessert=new Image(dimension,dimension);
+var imgForest=new Image(dimension,dimension);
+var imgVillage=new Image(dimension,dimension);
+var imgMountain=new Image(dimension,dimension);
+var imgSwamp=new Image(dimension,dimension);
+var imgOpen=new Image(dimension,dimension);
+var imgTrail=new Image(dimension,dimension);
+var imgLair=new Image(dimension,dimension);
+var imgStronghold=new Image(dimension,dimension);
+var imgRiver=new Image(dimension,dimension);
 
 
  imgDessert.src = "Img/Sprites1.png";
@@ -133,35 +134,35 @@ function drawTile(){
         for(x=0;x<row;x++){
             var currentfield=tiles[x][y].type;
             if(currentfield=="Open"){
-                   ctx.drawImage(imgOpen , x*36, y*36);
+                   ctx.drawImage(imgOpen , x*dimension, y*dimension);
             }  
             
             if(currentfield=="Swamp"){
-                ctx.drawImage(imgSwamp , x*36, y*36);
+                ctx.drawImage(imgSwamp , x*dimension, y*dimension);
             }  
             if(currentfield=="Dessert"){
-                ctx.drawImage(imgDessert , x*36, y*36);
+                ctx.drawImage(imgDessert , x*dimension, y*dimension);
             } 
             if(currentfield=="Mountain"){
-                ctx.drawImage(imgMountain , x*36, y*36);
+                ctx.drawImage(imgMountain , x*dimension, y*dimension);
             }
             if(currentfield=="Wood"){
-                ctx.drawImage(imgForest , x*36, y*36);
+                ctx.drawImage(imgForest , x*dimension, y*dimension);
             }
             if(currentfield=="Village"){
-                ctx.drawImage(imgVillage , x*36, y*36);
+                ctx.drawImage(imgVillage , x*dimension, y*dimension);
             }
             if(currentfield=="Lair"){
-                ctx.drawImage(imgLair , x*36, y*36);
+                ctx.drawImage(imgLair , x*dimension, y*dimension);
             }
             if(currentfield=="River"){
-                ctx.drawImage(imgRiver , x*36, y*36);
+                ctx.drawImage(imgRiver , x*dimension, y*dimension);
             }
             if(currentfield=="Trail"){
-                ctx.drawImage(imgTrail , x*36, y*36);
+                ctx.drawImage(imgTrail , x*dimension, y*dimension);
             }
             if(currentfield=="Stronghold"){
-                ctx.drawImage(imgStronghold , x*36, y*36);
+                ctx.drawImage(imgStronghold , x*dimension, y*dimension);
             }
             
         }
@@ -271,7 +272,7 @@ function coordinator(X,Y){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     drawTile();
     ctx.beginPath();
-    ctx.rect(X*36,Y*36,36,36);
+    ctx.rect(X*dimension,Y*dimension,dimension,dimension);
     ctx.stroke();
     
 
