@@ -58,7 +58,7 @@ drawTile();
 
 function monstering(type){
 
-    if(type=="Open"){
+    if((type=="Open")&&(type=="path")){
         return OpenMonster[random(0,OpenMonster.length)];
     }
     if(type=="Dessert"){
