@@ -58,7 +58,7 @@ drawTile();
 
 function monstering(type){
 
-    if((type=="Open")&&(type=="path")){
+    if((type=="Open")||(type=="Trail")){
         return OpenMonster[random(0,OpenMonster.length)];
     }
     if(type=="Dessert"){
@@ -67,10 +67,10 @@ function monstering(type){
     if(type=="Wood"){
         return WoodMonster[random(0,WoodMonster.length)];
     }
-    if(type=="Mountain"){
+    if((type=="Mountain")||(type=="Lair")){
         return MountainMonster[random(0,MountainMonster.length)];    
     }
-    if(type=="Swamp"){
+    if((type=="Swamp")||(type=="River")){
         return SwampMonster[random(0,SwampMonster.length)];
     }
     if(type=="Village"){return "Townsman" }
@@ -177,7 +177,7 @@ function random(k,g){
     return Math.floor(Math.random()*g)+k;
 }
 function field(){
-    var rand=random(0,10);
+    var rand=random(0,11);
     
     if((rand==2 )||(rand==3)||(rand==7)||(rand==8)||(rand==9)){
         Field="Open";
