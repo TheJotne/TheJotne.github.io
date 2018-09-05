@@ -8,8 +8,8 @@ var WoodMonster=["Bears","Boars","Centaurs","Centipede","Cockatrices","Dragons",
 var MountainMonster=["Cave Bears","Cavemen","Chimeras","Dragons","Dwarfs","Earth Elemetal","Gargoyles","Giants","Goblins","Griffons","Jippogriffons","Hobgoblins","Lions","Men","Minotaur","Pasant","Giant Rats","Sabre Tooth Tiger","Trolls","Wyverns"]
 var DessertMonster=["Giant Ants","Cavemen","Centipedes","Chimeras","Cyclops","Djinn","Dragons","Efreet","Fire Elemental","Giants","Gnolls","Livings Statue","Maticores","Men","Mummies","Pasant","Purple Worms","Salamanders","Giant Scorpions","Giant Snake"]
 var SwampMonster=["Basilisks","Crocodiles","Giant Crocodiles","Dinosaurs","Dragon turtles","Dragons","Giants","Hydras","Kobolds","Leeches","Lizard Men","Giant Lizard","Medusa","Men","Pasant","Slime","Giant Worm","Giant Toad","Trollss","Giant Snake"]
-//var TownMonster=["Cave Bears","Cavemen","Chimeras","Dragons","Dwarfs","Earth Elemetal","Gargoyles","Giants","Goblins","Griffons","Jippogriffons","Hobgoblins","Lions","Men","Minotaur","Pasant","Giant Rats","Sabre Tooth Tiger","Trollss","Wyverns"]
-var Names=["Happienes","Dispear","Horror","Sickness","Cutness","Boringness","Timeless"]
+var TownMonster=["Cave Bears","Cavemen","Chimeras","Dragons","Dwarfs","Earth Elemetal","Gargoyles","Giants","Goblins","Griffons","Jippogriffons","Hobgoblins","Lions","Men","Minotaur","Pasant","Giant Rats","Sabre Tooth Tiger","Trollss","Wyverns"]
+var Names=["Happienes","despair","Horror","Sickness","Cutness","Boringness","Timeless"]
 var x;
 var y;
 var canvas = document.getElementById("Canvas");
@@ -74,6 +74,8 @@ function monstering(type){
         return SwampMonster[random(0,SwampMonster.length)];
     }
     if(type=="Village"){return "Townsman" }
+    if(type=="Stronghold"){
+        return TownMonster[random(0,SwampMonster.length)];}
 }
 function moveSomething(e) {
     switch(e.keyCode) {
